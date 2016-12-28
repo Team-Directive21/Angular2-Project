@@ -1,7 +1,10 @@
+import { MockBackend } from '@angular/http/testing';
+import { fakeBackendProvider } from './helpers/fake-backend';
+import { UserService } from './services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, BaseRequestOptions } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -9,13 +12,15 @@ import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import {  AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
-import { SortPipePipe } from './pipes/sort-pipe.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+import {AlertService, AuthenticationService} from './services/index';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'home', component: HomeComponent}
 
   ];
 
@@ -26,8 +31,8 @@ const appRoutes: Routes = [
     LoginComponent,
     AboutComponent,
     RegisterComponent,
-    SortPipePipe,
-    SortPipe
+    SortPipe,
+    HomeComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -36,7 +41,15 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+        AlertService,
+        AuthenticationService,
+        UserService,
+
+        fakeBackendProvider,
+        MockBackend,
+        BaseRequestOptions
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
