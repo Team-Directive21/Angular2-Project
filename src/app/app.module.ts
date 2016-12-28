@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, BaseRequestOptions } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 
+//import { AngularFireModule, AuthMethods } from 'angularfire2';
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
@@ -15,6 +17,8 @@ import { RegisterComponent } from './register/register.component';
 import { SortPipe } from './pipes/sort.pipe';
 import {AlertService, AuthenticationService} from './services/index';
 import { HomeComponent } from './home/home.component';
+
+import {CoreModule} from './core.module';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -39,7 +43,9 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule
+    RouterModule,
+
+    CoreModule
   ],
   providers: [
         AlertService,
@@ -49,6 +55,7 @@ const appRoutes: Routes = [
         fakeBackendProvider,
         MockBackend,
         BaseRequestOptions
+        
   ],
   bootstrap: [AppComponent]
 })
