@@ -9,6 +9,8 @@ import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import {  AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
+import { SortPipePipe } from './pipes/sort-pipe.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -23,7 +25,9 @@ const appRoutes: Routes = [
     NavComponent,
     LoginComponent,
     AboutComponent,
-    RegisterComponent
+    RegisterComponent,
+    SortPipePipe,
+    SortPipe
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
