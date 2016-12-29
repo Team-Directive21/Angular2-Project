@@ -17,7 +17,10 @@ const firebaseConfig = {
     messagingSenderId: "472621522629"
     };
 
-    @NgModule({
+
+
+
+@NgModule({
   imports: [
     BrowserModule,
     FormsModule,
@@ -26,9 +29,15 @@ const firebaseConfig = {
       provider: AuthProviders.Facebook,
       method: AuthMethods.Redirect
     })
+
+    
   ],
   exports: [
     BrowserModule,
   ]
 })
+
+
+
 export class CoreModule {}
+
