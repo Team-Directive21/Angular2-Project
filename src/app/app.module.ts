@@ -21,6 +21,7 @@ import { HomeComponent } from './home/home.component';
 import {CoreModule} from './core.module';
 
 const appRoutes: Routes = [
+  
   {path: 'login', component: LoginComponent},
   {path: 'about', component: AboutComponent},
   {path: 'register', component: RegisterComponent},
