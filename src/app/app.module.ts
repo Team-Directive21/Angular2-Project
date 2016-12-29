@@ -18,14 +18,19 @@ import { SortPipe } from './pipes/sort.pipe';
 import {AlertService, AuthenticationService} from './services/index';
 import { HomeComponent } from './home/home.component';
 
-import {CoreModule} from './core.module';
+import {CoreModule} from './core-module';
+import { GroupsComponent } from './groups/groups.component';
+import { DirectionsComponent } from './directions/directions.component';
+import { PostsComponent } from './posts/posts.component';
 
 const appRoutes: Routes = [
   
   {path: 'login', component: LoginComponent},
   {path: 'about', component: AboutComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
+{path:'directions',component:DirectionsComponent},
+{path:'create-post',component:PostsComponent}
 
   ];
 
@@ -37,7 +42,10 @@ const appRoutes: Routes = [
     AboutComponent,
     RegisterComponent,
     SortPipe,
-    HomeComponent
+    HomeComponent,
+    GroupsComponent,
+    DirectionsComponent,
+    PostsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
