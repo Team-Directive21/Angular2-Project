@@ -35,13 +35,7 @@ export class AppComponent {
   }
 
   private _changeState(user: any = null) {
-<<<<<<< HEAD
-    if (user) {
-      this.isAuth = true;
-      this.authColor = 'primary';
-      this.user = this._getUserInfo(user)
-    } else {
-=======
+
     if(user) {
       console.log("vliza");
       this.isAuth = true;
@@ -50,7 +44,6 @@ export class AppComponent {
       localStorage.setItem('myUser',JSON.stringify(this.user));
     }
     else {
->>>>>>> e0f7e7eec3b2a2908ec1b2c107f826adbc074638
       this.isAuth = false;
       this.authColor = 'warn';
       this.user = {};
