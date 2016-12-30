@@ -23,23 +23,28 @@ import { GroupsComponent } from './groups/groups.component';
 import { DirectionsComponent } from './directions/directions.component';
 import { PostsComponent } from './posts/posts.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
+import { TopDriversComponent } from './top-drivers/top-drivers.component';
+
+import { AuthGuard } from './guards/auth.guard';
 
 
-import {AuthGuard} from './guards/auth.guard'
 
 const appRoutes: Routes = [
 
-  
-  {path: 'login', component: LoginComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'home', component: HomeComponent},
-{path:'directions',component:DirectionsComponent},
-{path:'create-post',component:PostsComponent,canActivate:[AuthGuard]},
-{path:'**',redirectTo:'home'}
+
+  { path: 'login', component: LoginComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'directions', component: DirectionsComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'create-post', component: PostsComponent, canActivate: [AuthGuard] },
+  {path: 'top-drivers', component: TopDriversComponent},
+  { path: '**', redirectTo: 'home' }
 
 
- 
+
 ];
 
 @NgModule({
@@ -54,7 +59,9 @@ const appRoutes: Routes = [
     GroupsComponent,
     DirectionsComponent,
     PostsComponent,
-    FooterComponent
+    FooterComponent,
+    ContactComponent,
+    TopDriversComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -70,11 +77,11 @@ const appRoutes: Routes = [
     AuthenticationService,
     UserService,
 
-        fakeBackendProvider,
-        MockBackend,
-        BaseRequestOptions,
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions,
 
-        AuthGuard
+    AuthGuard
 
   ],
   bootstrap: [AppComponent]

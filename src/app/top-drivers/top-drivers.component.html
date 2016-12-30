@@ -1,0 +1,10 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <span class="tag tag-default tag-pill float-xs-right">Rating:</span>
+    <strong>Best Drivers:</strong>
+  </li>  
+  <li class="list-group-item" *ngFor="let user of users | sort:'rating'">
+    <span class="tag tag-default tag-pill float-xs-right">{{user.rating}}</span>
+    {{user.username}}:
+  </li>  
+</ul>

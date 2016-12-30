@@ -1,3 +1,4 @@
+import { User } from './../models/user';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -5,11 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortPipe implements PipeTransform {
 
-  transform(array: any[], args?: any): any {
+  transform(array: any, args?: any): any {
       array.sort((a: any, b: any) => {
-      if (a < b) {
+      if (a[args] > b[args]) {
         return -1;
-      } else if (a > b) {
+      } else if (a[args] < b[args]) {
         return 1;
       } else {
         return 0;
