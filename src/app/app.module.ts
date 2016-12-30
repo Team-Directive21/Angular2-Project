@@ -25,7 +25,8 @@ import { PostsComponent } from './posts/posts.component';
 import { FooterComponent } from './footer/footer.component';
 
 
-import {AuthGuard} from './guards/auth.guard'
+import {AuthGuard} from './guards/auth.guard';
+import { SofiaPlovdivComponent } from './directions/sofia-plovdiv/sofia-plovdiv.component'
 
 const appRoutes: Routes = [
 
@@ -36,6 +37,9 @@ const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
 {path:'directions',component:DirectionsComponent},
 {path:'create-post',component:PostsComponent,canActivate:[AuthGuard]},
+{path:'directions',component:DirectionsComponent},
+{path:'directions/sofia-plovdiv',component:SofiaPlovdivComponent},
+
 {path:'**',redirectTo:'home'}
 
 
@@ -54,7 +58,8 @@ const appRoutes: Routes = [
     GroupsComponent,
     DirectionsComponent,
     PostsComponent,
-    FooterComponent
+    FooterComponent,
+    SofiaPlovdivComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
