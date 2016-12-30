@@ -29,11 +29,12 @@ import 'rxjs/add/operator/take';
 
 export class PostsComponent implements OnInit {
   items: FirebaseListObservable<any[]>;
-
-
+  currentUser:any;
+  directions:any[];
   constructor(af:AngularFire,fa:FirebaseAuth) {
+    this.directions = ["sofia-plovdiv","plovdiv-sofia"];
   console.log(localStorage.getItem("myUser"));
-
+this.currentUser = localStorage.getItem("myUser");
     // if(af.auth){
     //   console.log("Ima");
       
@@ -54,6 +55,13 @@ export class PostsComponent implements OnInit {
     //   console.log(snap.val());
     // })
   }
+
+  postPost(selec,day,time,seats,price){
+    console.log(selec);
+    console.log(day);
+    database().ref('/'+selec).push({user:JSON.parse(this.currentUser),day:day,time:time,seats:seats,price:price});
+  }
+
 
   ngOnInit() {
   }

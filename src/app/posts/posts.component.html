@@ -6,19 +6,19 @@
 
 <div class="container">
     <h2>Create post</h2>
-    <form action="post">
+    <form id="add-post">
         <label for="sel1">Choose destination</label>
-        <select class="form-control" name="sel1" id="sel1">
-      <option value="sofia-plovdiv">Sofia -> Plovdiv</option>
+        <select class="form-control" [(ngModel)]="selec" required name="selec" id="sel1">
+            <option *ngFor="let d of directions" [ngValue]="d">{{d}}</option>
       </select>
         <label for="day_travel">Day:</label>
-        <input type="text" class="form-control" id="day_travel">
+        <input type="text" [(ngModel)]="day" name="day" class="form-control" id="day_travel">
         <label for="time">Departure:</label>
-        <input type="text" class="form-control" id="time">
+        <input type="text" [(ngModel)]="time" name="time" class="form-control" id="time">
         <label for="seats">Seats left:</label>
-        <input type="number" min="1" class="form-control" id="seats">
+        <input type="number" [(ngModel)]="seats" name="seats" min="1" class="form-control" id="seats">
         <label for="price">Price:</label>
-        <input type="number" min="1" class="form-control" id="price">
-        <input type="submit" value="Submit">
+        <input type="number" [(ngModel)]="price" name="price" min="1" class="form-control" id="price">
+        <input type="submit" (click)="postPost(selec,day,time,seats,price)" value="Submit">
     </form>
 </div>
