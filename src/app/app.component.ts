@@ -21,6 +21,7 @@ export class AppComponent {
       user => this._changeState(user),
       error => console.trace(error)
     );
+    
   }
 
   login(from: string) {
@@ -30,18 +31,22 @@ export class AppComponent {
   }
   logout() {
     this.af.auth.logout();
+    localStorage.clear();
   }
 
   private _changeState(user: any = null) {
     if(user) {
+      console.log("vliza");
       this.isAuth = true;
       this.authColor = 'primary';
       this.user = this._getUserInfo(user)
+      localStorage.setItem('myUser',JSON.stringify(this.user));
     }
     else {
       this.isAuth = false;
       this.authColor = 'warn';
       this.user = {};
+      localStorage.clear();
     }
   }
 
@@ -65,5 +70,10 @@ export class AppComponent {
       case 'github': return AuthProviders.Github;
       case 'google': return AuthProviders.Google;
     }
+  }
+
+  
+  isUserLoggedIn() {
+    return (Object.keys(this.user).length === 0);
   }
 }

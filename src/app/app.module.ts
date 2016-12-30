@@ -23,6 +23,9 @@ import { GroupsComponent } from './groups/groups.component';
 import { DirectionsComponent } from './directions/directions.component';
 import { PostsComponent } from './posts/posts.component';
 
+
+import {AuthGuard} from './guards/auth.guard'
+
 const appRoutes: Routes = [
   
   {path: 'login', component: LoginComponent},
@@ -30,7 +33,8 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'home', component: HomeComponent},
 {path:'directions',component:DirectionsComponent},
-{path:'create-post',component:PostsComponent}
+{path:'create-post',component:PostsComponent,canActivate:[AuthGuard]},
+{path:'**',redirectTo:'home'}
 
   ];
 
@@ -63,7 +67,9 @@ const appRoutes: Routes = [
 
         fakeBackendProvider,
         MockBackend,
-        BaseRequestOptions
+        BaseRequestOptions,
+
+        AuthGuard
         
   ],
   bootstrap: [AppComponent]
