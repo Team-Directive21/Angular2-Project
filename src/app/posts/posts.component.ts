@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import {
-     AngularFireModule, 
-  AuthMethods, 
-  AuthProviders 
-} from "angularfire2";
+  AngularFireModule,
+  AuthMethods,
+  AuthProviders
+} from 'angularfire2';
 
-import {database} from 'firebase';
+import { database } from 'firebase';
 
 @Component({
   selector: 'app-posts',
@@ -19,11 +19,11 @@ import {database} from 'firebase';
 
 
 export class PostsComponent implements OnInit {
-  items:FirebaseListObservable<any[]>;
+  items: FirebaseListObservable<any[]>;
 
-  constructor(af:AngularFire) {
+  constructor(af: AngularFire) {
     this.items = af.database.list('/sofia-plovdiv');
-    
+
     this.items.subscribe(
       val => console.log(val)
     );
@@ -31,11 +31,11 @@ export class PostsComponent implements OnInit {
     // root.on('value',function(snap){
     //   console.log(snap.val());
     // })
-   }
+  }
 
   ngOnInit() {
   }
 
-  
+
 
 }

@@ -1,15 +1,8 @@
-<div class="col-md-6 col-md-offset-3">
-    <h1 *ngIf="currentUser">Hi {{currentUser.firstName}}!</h1>
-    <p>You're logged in with Angular 2!!</p>
-    <h3>All registered users:</h3>
-    <ul>
-        <li *ngFor="let user of users">
-            {{user.username}} ({{user.firstName}} {{user.lastName}}) - <a (click)="deleteUser(user.id)">Delete</a>
-        </li>
-    </ul>
-    <p><a [routerLink]="['/login']">Logout</a></p>
-</div>
-
-<!--<ul>
-    <li>{{myUser.name}}</li>
-</ul>-->
+<html>
+<body>
+    <header>
+        <h1>Welcome to CheapTrip!</h1>
+    </header>
+    <button class="btn btn-info">Find a transport</button>
+</body>
+</html>

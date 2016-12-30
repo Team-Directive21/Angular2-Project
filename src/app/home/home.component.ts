@@ -3,23 +3,24 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/index';
 import { UserService } from '../services/index';
 
-import {} from ''
+import { } from ''
 
 @Component({
-    templateUrl: './home.component.html'
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
 })
 
 export class HomeComponent implements OnInit {
-    
-   // myUser:any = firebase.auth().currentUser;
+
+    // myUser:any = firebase.auth().currentUser;
     currentUser: User;
     users: User[] = [];
 
-    
+
 
     constructor(private userService: UserService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        
+
         console.log(this);
     }
 

@@ -1,0 +1,20 @@
+body {
+    background-image: url("http://kingofwallpapers.com/highway/highway-039.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-origin: initial;
+    background-position: initial;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    max-height: 100%;
+}
+
+button {
+margin-top: 500px;
+margin-bottom: 100px;
+}
+
+h1 {
+    color: white;
+}

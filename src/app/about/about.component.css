@@ -1,0 +1,28 @@
+.card {
+    background-color: white;
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    margin: 80px;
+    text-align: center;
+}
+
+h4 {
+    color: #F1B70F;
+}
+
+.logos {
+   display: inline-block;
+   margin: 3px;
+   margin-top: 15px;
+   background-image: url(http://ui.telerikacademy.com/Content/Images/social-sprite-icons.png);
+   background-size: initial;
+   background-repeat-x: initial;
+   background-repeat-y: initial;
+   background-attachment: initial;
+   background-origin: initial;
+   background-clip: initial;
+   background-color: initial;
+   width: 37px;
+height: 35px;}
+

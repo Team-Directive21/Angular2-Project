@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AngularFire, AuthProviders } from 'angularfire2';
 
 @Component({
-   //moduleId: module.id,
+
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
@@ -33,12 +33,11 @@ export class AppComponent {
   }
 
   private _changeState(user: any = null) {
-    if(user) {
+    if (user) {
       this.isAuth = true;
       this.authColor = 'primary';
       this.user = this._getUserInfo(user)
-    }
-    else {
+    } else {
       this.isAuth = false;
       this.authColor = 'warn';
       this.user = {};
@@ -46,7 +45,7 @@ export class AppComponent {
   }
 
   private _getUserInfo(user: any): any {
-    if(!user) {
+    if (!user) {
       return {};
     }
     let data = user.auth.providerData[0];
@@ -59,7 +58,7 @@ export class AppComponent {
   }
 
   private _getProvider(from: string) {
-    switch(from){
+    switch (from) {
       case 'twitter': return AuthProviders.Twitter;
       case 'facebook': return AuthProviders.Facebook;
       case 'github': return AuthProviders.Github;
