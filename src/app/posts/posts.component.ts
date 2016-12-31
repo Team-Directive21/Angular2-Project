@@ -45,11 +45,6 @@ this.currentUser = localStorage.getItem("myUser");
 
 
 
-    this.items = af.database.list('/sofia-plovdiv');
-
-    this.items.subscribe(
-      val => console.log(val)
-    );
     // var root = database().ref();
     // root.on('value',function(snap){
     //   console.log(snap.val());
