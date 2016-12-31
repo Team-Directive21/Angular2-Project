@@ -23,10 +23,12 @@ import { GroupsComponent } from './groups/groups.component';
 import { DirectionsComponent } from './directions/directions.component';
 import { PostsComponent } from './posts/posts.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
+import { TopDriversComponent } from './top-drivers/top-drivers.component';
 
-
-import {AuthGuard} from './guards/auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { SofiaPlovdivComponent } from './directions/sofia-plovdiv/sofia-plovdiv.component'
+
 
 const appRoutes: Routes = [
 
@@ -36,14 +38,13 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'home', component: HomeComponent},
 {path:'directions',component:DirectionsComponent},
+ { path: 'contact', component: ContactComponent },
 {path:'create-post',component:PostsComponent,canActivate:[AuthGuard]},
+ {path: 'top-drivers', component: TopDriversComponent},
+
 {path:'directions',component:DirectionsComponent},
 {path:'directions/sofia-plovdiv',component:SofiaPlovdivComponent},
-
-{path:'**',redirectTo:'home'}
-
-
- 
+{path:'**',redirectTo:'home'},
 ];
 
 @NgModule({
@@ -59,7 +60,13 @@ const appRoutes: Routes = [
     DirectionsComponent,
     PostsComponent,
     FooterComponent,
+
+ContactComponent,
+    TopDriversComponent,
     SofiaPlovdivComponent
+
+    
+
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -75,11 +82,11 @@ const appRoutes: Routes = [
     AuthenticationService,
     UserService,
 
-        fakeBackendProvider,
-        MockBackend,
-        BaseRequestOptions,
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions,
 
-        AuthGuard
+    AuthGuard
 
   ],
   bootstrap: [AppComponent]

@@ -10,9 +10,10 @@ body {
     max-height: 100%;
 }
 
-button {
+a {
 margin-top: 500px;
 margin-bottom: 100px;
+color: white;
 }
 
 h1 {
