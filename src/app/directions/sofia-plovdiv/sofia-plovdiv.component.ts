@@ -18,7 +18,7 @@ import {FirebaseAuth,FirebaseAuthState} from 'angularfire2';
   styleUrls: ['./sofia-plovdiv.component.css']
 })
 export class SofiaPlovdivComponent implements OnInit {
-posts;
+posts: FirebaseListObservable<any[]>;
   constructor(af:AngularFire) {
     
     this.posts = af.database.list('/sofia-plovdiv');
