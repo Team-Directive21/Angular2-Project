@@ -1,0 +1,19 @@
+.card {
+    margin: 0 auto;
+    width: 500px;
+}
+
+img {
+    max-width: 100%;
+    position: relative;
+}
+
+.card-block a {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
