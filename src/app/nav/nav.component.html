@@ -7,8 +7,18 @@
         <a class="nav-item nav-link" href="/about">About</a>
         <a class="nav-item nav-link" href="/create-post">Create post</a>
         <a class="nav-item nav-link" href="/contact">Contact</a>
-        <a class="nav-item nav-link float-xs-right" href="/register">Register</a>
-        <a class="nav-item nav-link float-xs-right" href="/login">Login</a>
+        <!--<a class="nav-item nav-link float-xs-right" href="/register">Register</a>
+        <a class="nav-item nav-link float-xs-right" href="/login">Login</a>-->
+        <div *ngIf="currUser == null">
+            <a href="/login-fb" class="nav-item nav-link float-xs-right">
+                <img src="http://www.timetickets.net/assets/img/login-fb.png" alt="">
+            </a>
+        </div>
+            <div *ngIf="currUser != null">
+                <a href="/login-fb" class="nav-item nav-link float-xs-right">
+            Hello {{currUser.name}}
+        </a>
+            </div>
 
-    </div>
+        </div>
 </nav>

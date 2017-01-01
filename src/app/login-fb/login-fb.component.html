@@ -1,0 +1,25 @@
+<h1>
+    Login with Facebook so you can see all cheap trips
+</h1>
+<div id="auth-buttons">
+<button md-raised-button (click)="login('facebook')" ng-href="home">
+  <img width="30"  />Use My Facebook Account
+</button>
+
+<a href="home">
+    <button md-raised-button (click)="logout()">
+  Logout
+</button>
+</a>
+</div>
+<div *ngIf="user.name">
+    <h4>Hello {{user.name}}</h4>
+    <a href="directions">Choose your cheap trip</a>
+</div>
+
+<h4 *ngIf="!user.name">You are not logged in</h4>
+<div *ngIf="user.name">
+    <h2>{{user.name}}</h2>
+    <h3>{{user.email}}</h3>
+    <img [src]="user.avatar" alt="">
+</div>
