@@ -11,14 +11,14 @@
         <a class="nav-item nav-link float-xs-right" href="/login">Login</a>-->
         <div *ngIf="currUser == null">
             <a href="/login-fb" class="nav-item nav-link float-xs-right">
-                <img src="http://www.timetickets.net/assets/img/login-fb.png" alt="">
+                <img src="../assets/images/login-fb.png" alt="">
             </a>
         </div>
-            <div *ngIf="currUser != null">
-                <a href="/login-fb" class="nav-item nav-link float-xs-right">
+        <div *ngIf="currUser != null">
+            <a href="/login-fb" class="nav-item nav-link float-xs-right">
             Hello {{currUser.name}}
         </a>
-            </div>
-
         </div>
+
+    </div>
 </nav>
