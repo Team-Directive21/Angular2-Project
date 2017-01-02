@@ -29,7 +29,8 @@ import { TopDriversComponent } from './top-drivers/top-drivers.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SofiaPlovdivComponent } from './directions/sofia-plovdiv/sofia-plovdiv.component';
 import { LoginFbComponent } from './login-fb/login-fb.component';
-import { PlovdivSofiaComponent } from './directions/plovdiv-sofia/plovdiv-sofia.component'
+import { PlovdivSofiaComponent } from './directions/plovdiv-sofia/plovdiv-sofia.component';
+import { SofiaBurgasComponent } from './directions/sofia-burgas/sofia-burgas.component'
 
 
 const appRoutes: Routes = [
@@ -69,7 +70,8 @@ ContactComponent,
     TopDriversComponent,
     SofiaPlovdivComponent,
     LoginFbComponent,
-    PlovdivSofiaComponent
+    PlovdivSofiaComponent,
+    SofiaBurgasComponent
 
     
 
