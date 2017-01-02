@@ -55,11 +55,13 @@ export class LoginFbComponent{
       return {};
     }
     let data = user.auth.providerData[0];
+    // console.log(user.auth);
     return {
       name: data.displayName,
       avatar: data.photoURL,
       email: data.email,
-      provider: data.providerId
+      provider: data.providerId,
+      uid:data.uid
     };
   }
 
