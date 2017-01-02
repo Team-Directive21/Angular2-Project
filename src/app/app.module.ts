@@ -44,7 +44,7 @@ const appRoutes: Routes = [
  {path: 'top-drivers', component: TopDriversComponent},
 
 {path:'directions',component:DirectionsComponent},
-{path:'directions/sofia-plovdiv',component:SofiaPlovdivComponent},
+{path:'directions/sofia-plovdiv',component:SofiaPlovdivComponent,canActivate:[AuthGuard]},
 {path:'login-fb',component:LoginFbComponent},
 {path:'**',redirectTo:'home'},
 ];
