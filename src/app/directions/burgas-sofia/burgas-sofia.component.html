@@ -1,3 +1,23 @@
-<p>
-  burgas-sofia works!
-</p>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3">This is a group for people travelling from <strong>Burgas</strong> to <strong>Sofia</strong></h1>
+    </div>
+</div>
+<ul>
+    <li *ngFor="let post of posts | async">
+        <div class="card">
+            <img class="card-img-top" src="{{post.user.avatar}}" alt="Card image cap">
+            <a href="https://www.facebook.com/{{post.user.uid}}" class="logos"></a>
+            <div class="card-block">
+
+                <p><strong>From: </strong>{{post.user.name}}</p>
+                <p><strong>Day: </strong>{{post.day}}</p>
+                <p><strong>Time: </strong>{{post.time}}</p>
+                <p><strong>Seats left: </strong>{{post.seats}}</p>
+                <p><strong>Price: </strong>{{post.price | currency: 'BGN'}}</p>
+
+            </div>
+        </div>
+
+    </li>
+</ul>

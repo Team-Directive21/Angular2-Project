@@ -32,7 +32,7 @@ export class PostsComponent implements OnInit {
   currentUser:any;
   directions:any[];
   constructor(af:AngularFire,fa:FirebaseAuth) {
-    this.directions = ["sofia-plovdiv","plovdiv-sofia","sofia-burgas"];
+    this.directions = ["sofia-plovdiv","plovdiv-sofia","sofia-burgas","burgas-sofia"];
   console.log(localStorage.getItem("myUser"));
 this.currentUser = localStorage.getItem("myUser");
     // if(af.auth){
