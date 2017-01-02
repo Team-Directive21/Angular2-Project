@@ -14,11 +14,16 @@
 </div>
 <div *ngIf="user.name">
     <h4>Hello {{user.name}}</h4>
-    <a href="directions">Choose your cheap trip</a>
+
 </div>
 
 <h4 *ngIf="!user.name">You are not logged in</h4>
-<div *ngIf="user.name">
+<div *ngIf="user.name" id="user-info">
+    <a href="directions">
+        <button type="button" class="btn btn-link">
+              Choose your cheap trip
+              </button>
+    </a>
     <h2>{{user.name}}</h2>
     <h3>{{user.email}}</h3>
     <img [src]="user.avatar" alt="">
