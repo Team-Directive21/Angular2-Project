@@ -29,6 +29,7 @@ posts: FirebaseListObservable<any[]>;
    }
 
   ngOnInit() {
+    
   }
 
 
