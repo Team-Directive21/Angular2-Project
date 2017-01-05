@@ -8,7 +8,7 @@
 ## Run the app
 - You must first install dependencies by **npm install**
 - Then you can type **npm start** to run the application
-- The app will be on port 8000
+- The app will be on port 4200
 
 ## Course Project
 _Single-page Applications with Angular 2_
